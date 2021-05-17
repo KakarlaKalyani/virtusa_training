@@ -1,0 +1,10 @@
+1.  optionA(int var=7;)
+2.  optionD&optionE
+3.  optionB(NullPointerException is thrown at runtime)
+4.  optionD(P1000M)
+5.  optionA(line4 causes a compilation error)
+6.  optionC(compilation error)
+7.  optionB(120)
+8.  optionA(3)
+9.  optionC(Good_Morning)
+10. optionD(compilation error)

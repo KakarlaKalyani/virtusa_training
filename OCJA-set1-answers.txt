@@ -1,0 +1,10 @@
+1.  optionA(yes,HELLO is printed in console)
+2.  optionC(5)
+3.  optionB(null null)
+4.  optionD
+5.  optionC
+6.  optionA
+7.  optionB
+8.  optionC
+9.  optionD
+10.  optionC&optionB
