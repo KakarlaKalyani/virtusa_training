@@ -1,0 +1,54 @@
+
+  import java.time.LocalDate;
+   public class Main {
+	public static void main(String[] args) {
+
+		LocalDate dob = LocalDate.of(2020, 04, 05);
+		LocalDate today = LocalDate.now();
+
+		if (dob.getMonthValue() == today.getMonthValue()) {
+			if (dob.getDayOfMonth() == today.getDayOfMonth())
+				System.out.println("ManyMore Happy Returns Of the Day");
+		}
+	}
+    }
+
+
+
+
+   import java.time.LocalDate;
+   public class Main {
+	public static void main(String[] args) {
+
+		LocalDate BillsPayDay = LocalDate.of(2020, 04, 05);
+		LocalDate today = LocalDate.now();
+		int BillingDay=BillsPayDay.getDayOfMonth();
+		int TodayDate=today.getDayOfMonth();
+		if(BillingDay==TodayDate) {
+			System.out.println("It is Billing day ");
+			}
+		else{
+                       if(TodayDate<BillingDay)
+			System.out.println(BillingDay-TodayDate+" more days to pay");
+                    }
+	}
+   }
+
+
+
+
+
+   import java.time.LocalDate;
+   import java.time.Period;
+
+   public class Date_And_time {
+	public static void main(String[] args) {
+
+		LocalDate Day = LocalDate.of(2020, 04, 05);
+		LocalDate today = LocalDate.now();
+
+		Period period1 = Period.between(today, Day);
+		System.out.println(period1);
+
+	}
+   }
