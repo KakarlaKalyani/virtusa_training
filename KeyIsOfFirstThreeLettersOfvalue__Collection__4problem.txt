@@ -1,0 +1,19 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class CityNames {
+   public static void main(String[] args) {
+	   Map<String,String> map=new HashMap<>();
+	   String arr[]= {"goa","Kerala","gujarat"};
+	   for(int i=0;i<arr.length;i++) {
+		   map.put(arr[i].substring(0,3).toUpperCase(),arr[i]);
+	   }
+	   for(String s:map.keySet()) {
+		   System.out.print(s+":"+map.get(s)+" ");
+	   }
+   }
+}
+   
+
+
+output:GOA:goa KER:kerala GUJ:gujarat

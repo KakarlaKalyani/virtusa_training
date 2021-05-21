@@ -1,0 +1,31 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class AverageOfOddRolls {
+
+	static int average(Map<Integer, Integer> map) {
+		int total = 0;
+		for (int i : map.keySet()) {
+			if (i % 2 == 1)
+				total = total + map.get(i);
+
+		}
+		return total / 2;
+	}
+
+	public static void main(String[] args) {
+		Map<Integer, Integer> map = new HashMap<>();
+		map.put(12, 90);
+		map.put(35, 90);
+		map.put(33, 90);
+		map.put(56, 88);
+		int res = average(map);
+		System.out.println(res);
+	}
+}
+
+
+
+
+
+output:90

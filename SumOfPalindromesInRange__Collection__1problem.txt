@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class PalindromeSum {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int input1 = sc.nextInt();
+		int input2 = sc.nextInt();
+		int res = palindromeSum(input1, input2);
+		System.out.println(res);
+	}
+	static int palindromeSum(int input1, int input2) {
+		int sum = 0;
+		for (int i = input1; i <= input2; i++) {
+			int temp = i;
+			int num = 0;
+
+			while (temp > 0) {
+				int r = temp % 10;
+				num =10*num +r;
+				temp = temp / 10;
+			}
+		
+			if (num == i)
+				sum = sum + i;
+
+		}
+		return sum;
+	}
+
+}
+
+
+
+
+input1:90 input2:120
+Output:311

@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+public class MaxScoreArray {
+	public static void main(String[] args) {
+		ArrayList<String> marksList = new ArrayList<>();
+		Map<String, Integer> map = new HashMap<>();
+		marksList.add("Arun#12#12#12");
+		marksList.add("deepak#13#12#12");
+		for (String singleMark : marksList) {
+			String str = singleMark;
+			String[] arr = str.split("#");
+			Integer totalMark = Integer.parseInt(arr[1] + arr[2] + arr[3]);
+			map.put(arr[0], totalMark);
+		}
+		Map.Entry<String, Integer> maxEntry = null;
+
+		for (Map.Entry<String, Integer> entry : map.entrySet()) {
+
+			if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0) {
+				maxEntry = entry;
+			}
+		}
+		System.out.println(maxEntry.getKey());
+	}
+}
+
+
+
+
+
+
+output:deepak
