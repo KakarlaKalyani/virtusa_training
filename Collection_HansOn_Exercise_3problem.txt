@@ -1,0 +1,94 @@
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.Set;
+
+public class CountryCapitalsMap {
+
+    Map<String,String> M1=new HashMap<>();
+     Map<String,String> M2=new HashMap<>();
+
+
+    public Map<String,String> storeCountryCapital(String countryName, String capital)
+      {
+           M1.put(countryName,capital);
+           return M1;
+      }
+
+
+      public String  retrieveCapital(String CountryName)
+      {
+    	  Set<String> country=M1.keySet();
+    	  for(String i:country) {
+    		  if(i==CountryName)
+    			return  M1.get(i);
+    		  else
+    			  return null;
+    	  }
+      }
+
+
+     public String  retrieveCountry(String capital)
+      {
+         Set<String> country=M1.keySet();
+         for(String i:country) {
+        	 if(M1.get(i)==capital)
+        		 return i;
+        	 else
+        		 return null;
+      }
+      }
+
+     public Map<String,String>  swapCountryCaptial()
+      {
+         Set s=M1.entrySet();
+         Iterator itr=s.iterator();
+         while(itr.hasNext())
+         {
+            Map.Entry m=(Map.Entry)itr.next();
+           M2.put((String)m.getValue(),(String)m.getKey());
+         }
+       return M2;
+      }
+}
+
+
+public class CountryMapDemo
+{
+     public static void main(String args[])
+   {
+    Scanner scan=new Scanner(System.in);
+    System.out.println("Choose below options");
+    CountryMap ccm=new CountryMap();
+
+
+     while(true)
+     {
+          System.out.println("1. add countryName and captial to the list 2.Enough");
+          int n=scan.nextInt(); scan.nextLine();
+          if(n==1)
+            ccm.storeCountryCapital(scan.nextLine(),scan.nextLine());
+         else 
+            break;
+     }
+
+      System.out.println();
+      System.out.println(ccm.M1);
+      
+      System.out.println("Enter country name to get captial");
+      System.out.println(ccm.retrieveCapital(scan.nextLine()));
+        
+       System.out.println("Enter captial name to get CountryName");
+       System.out.println(ccm.retrieveCountry(scan.nextLine()));
+    
+      scan.close();
+      System.out.println("Swaping countries and capitals");
+      System.out.println(ccm.swapCountryCaptial());
+
+
+   
+   }
+}
+}

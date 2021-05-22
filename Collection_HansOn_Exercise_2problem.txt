@@ -1,0 +1,46 @@
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Scanner;
+
+public class CountryNamesSet {
+
+	Set<String> countrySet = new HashSet<>();
+
+	public Set<String> storeCountryNames(String CountryName) {
+		countrySet.add(CountryName);
+		return countrySet;
+	}
+
+	public String retrieveCountry(String Name) {
+		for (String i : countrySet) {
+			if (i.equals(Name))
+				return i;
+		}
+		return null;
+	}
+}
+
+
+public class CountryDemo {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+
+		CountryNamesSet cns = new CountryNamesSet();
+
+		while (true) {
+			System.out.println("choose any option\n 1.Addcounrty  2.Enough");
+			int n = s.nextInt();s.nextLine();
+			if (n == 1) {
+				System.out.println("Enter countryName");
+				cns.storeCountryNames(s.nextLine());
+			} else
+				break;
+		}
+		System.out.println(cns.countrySet);
+		System.out.println("enter country name which you want to retrieve ");
+		String Name = s.nextLine();
+		s.close();
+		System.out.println(cns.retrieveCountry(Name));
+
+	}
+}
